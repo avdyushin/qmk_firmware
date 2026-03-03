@@ -1,0 +1,6 @@
+MCU_LDSCRIPT = STM32F103xB
+UART_DRIVER_REQUIRED = yes
+DEFERRED_EXEC_ENABLE = yes
+
+SRC +=  ./wireless.c\
+		./board.c
