@@ -1,8 +1,8 @@
-/* Copyright 2021 QMK
+/* Copyright 2021 Glorious, LLC <salman@pcgamingrace.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -14,15 +14,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "bootloader.h"
+#pragma once
 
-#include <ch.h>
+#include_next <mcuconf.h>
 
-__attribute__((weak)) void bootloader_jump(void) {
-    BKP->DR10 = RTC_BOOTLOADER_JUST_UPLOADED;
-    NVIC_SystemReset();
-}
+#undef STM32_SPI_USE_SPI1
+#define STM32_SPI_USE_SPI1 TRUE
 
-__attribute__((weak)) void mcu_reset(void) {
-    NVIC_SystemReset();
-}
+#undef STM32_SERIAL_USE_USART1
+#define STM32_SERIAL_USE_USART1 TRUE
+
+#undef STM32_SERIAL_USE_USART3
+#define STM32_SERIAL_USE_USART3 TRUE
+
+#undef STM32_ADC_USE_ADC1
+#define STM32_ADC_USE_ADC1 TRUE
+
+#undef STM32_PWM_USE_TIM4
+#define STM32_PWM_USE_TIM4              TRUE

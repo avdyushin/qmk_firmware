@@ -1,8 +1,8 @@
-/* Copyright 2021 QMK
+/* Copyright 2022 Jacky
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -14,15 +14,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "bootloader.h"
 
-#include <ch.h>
+#include "quantum.h"
 
-__attribute__((weak)) void bootloader_jump(void) {
-    BKP->DR10 = RTC_BOOTLOADER_JUST_UPLOADED;
+void bootloader_jump(void) {
+    BKP->DR1 = RTC_BOOTLOADER_JUST_UPLOADED;//0x5343;
     NVIC_SystemReset();
 }
 
-__attribute__((weak)) void mcu_reset(void) {
+void mcu_reset(void) {
     NVIC_SystemReset();
 }
+
+// #include "smart_ble.h"
+
+
+// void encode_boot(void)
+// {
+
+//     if ((*(__IO uint32_t*)0x80000f0) != 0xdeadbeef )
+//     {
+
+//         while(1);
+//     }
+// }

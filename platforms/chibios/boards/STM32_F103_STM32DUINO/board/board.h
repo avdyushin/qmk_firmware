@@ -97,8 +97,11 @@
  * Everything input with pull-up except:
  * PB10    - Push Pull output  (USB switch).
  */
-#define VAL_GPIOBCRL            0x88888888      /*  PB7...PB0 */
-#define VAL_GPIOBCRH            0x88888388      /* PB15...PB8 */
+// #define VAL_GPIOBCRL            0x88888888      /*  PB7...PB0 */
+// #define VAL_GPIOBCRH            0x88888388      /* PB15...PB8 */
+// #define VAL_GPIOBODR            0xFFFFFFFF
+#define VAL_GPIOBCRL            0x48888888      /*  PB7...PB0 */
+#define VAL_GPIOBCRH            0x08888384     /* PB15...PB8 */
 #define VAL_GPIOBODR            0xFFFFFFFF
 
 /*
@@ -106,8 +109,11 @@
  * Everything input with pull-up except:
  * PC13    - Push Pull output  (LED).
  */
-#define VAL_GPIOCCRL            0x88888888      /*  PC7...PC0 */
-#define VAL_GPIOCCRH            0x88388888      /* PC15...PC8 */
+// #define VAL_GPIOCCRL            0x88888888      /*  PC7...PC0 */
+// #define VAL_GPIOCCRH            0x88388888      /* PC15...PC8 */
+// #define VAL_GPIOCODR            0xFFFFFFFF
+#define VAL_GPIOCCRL            0x80884888      /*  PC7...PC0 */
+#define VAL_GPIOCCRH            0x88384888      /* PC15...PC8 */
 #define VAL_GPIOCODR            0xFFFFFFFF
 
 /*
@@ -116,9 +122,12 @@
  * PD0  - Normal input (XTAL).
  * PD1  - Normal input (XTAL).
  */
+// #define VAL_GPIODCRL            0x88888844      /*  PD7...PD0 */
+// #define VAL_GPIODCRH            0x88888888      /* PD15...PD8 */
+// #define VAL_GPIODODR            0xFFFFFFFF
 #define VAL_GPIODCRL            0x88888844      /*  PD7...PD0 */
 #define VAL_GPIODCRH            0x88888888      /* PD15...PD8 */
-#define VAL_GPIODODR            0xFFFFFFFF
+#define VAL_GPIODODR            0xFFFFFFFB
 
 /*
  * Port E setup.

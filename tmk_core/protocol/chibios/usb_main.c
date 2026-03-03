@@ -508,10 +508,10 @@ void console_task(void) {
 
 #ifdef RAW_ENABLE
 void send_raw_hid(uint8_t *data, uint8_t length) {
-    if (length != RAW_EPSIZE) {
-        return;
-    }
-    send_report(USB_ENDPOINT_IN_RAW, data, length);
+    // if (length != RAW_EPSIZE) {
+    //     return;
+    // }
+    send_report(USB_ENDPOINT_IN_RAW, data, RAW_EPSIZE);
 }
 
 void raw_hid_task(void) {

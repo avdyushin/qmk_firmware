@@ -1,0 +1,43 @@
+/* Copyright 2021 Glorious, LLC <salman@pcgamingrace.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#pragma once
+
+#define HAL_USE_SPI TRUE
+#define SPI_USE_WAIT TRUE
+#define SPI_SELECT_MODE SPI_SELECT_MODE_PAD
+
+#define HAL_USE_ADC TRUE
+
+// This enables interrupt-driven mode
+#define PAL_USE_WAIT TRUE
+#define USB_USE_WAIT TRUE
+
+#define HAL_USE_SERIAL TRUE
+
+#define HAL_USE_PWM    TRUE
+#define HAL_USE_PAL    TRUE
+
+// Disable here, will be overridden in common.c
+#define STM32_DISABLE_EXTI0_HANDLER TRUE
+#define STM32_DISABLE_EXTI1_HANDLER TRUE
+#define STM32_DISABLE_EXTI2_HANDLER TRUE
+#define STM32_DISABLE_EXTI3_HANDLER TRUE
+#define STM32_DISABLE_EXTI4_HANDLER TRUE
+#define STM32_DISABLE_EXTI5_9_HANDLER TRUE
+#define STM32_DISABLE_EXTI10_15_HANDLER TRUE
+
+#include_next <halconf.h>

@@ -1,0 +1,12 @@
+{
+    "manufacturer": "SmartCloud",
+    "maintainer": "Jacky",
+    "board": "STM32_F103_STM32DUINO",
+    "bootloader": "stm32duino",
+    "bootloader_instructions": "Hold down the key at (0, 0) in the matrix (Escape) and plug in the keyboard.",
+    "processor": "STM32F103",
+    "url": "www.i-chip.cn",
+    "usb": {
+        "vid": "0x28E9"
+    }
+}
