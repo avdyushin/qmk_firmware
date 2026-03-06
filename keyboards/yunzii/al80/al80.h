@@ -49,3 +49,6 @@ enum kb_mode_c {
 #define BLE_PIN C14
 #define WIRELESS_PIN C15
 #define RENUM_PIN A8
+#define RGB_PIN B7
+#define LCD_PIN C9
+#define PLUGIN_PIN B9

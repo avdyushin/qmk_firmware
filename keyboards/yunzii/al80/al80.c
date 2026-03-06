@@ -21,6 +21,11 @@ void keyboard_pre_init_kb(void) {
     AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_DISABLE; // disable JTAG (GD32 different to STM32)
     gpio_set_pin_output(RENUM_PIN);
     gpio_write_pin_high(RENUM_PIN); // Enable USB
+    gpio_set_pin_output(RGB_PIN);
+    gpio_write_pin_low(RGB_PIN);
+    gpio_set_pin_output(LCD_PIN);
+    gpio_write_pin_high(LCD_PIN);
+    gpio_set_pin_input(PLUGIN_PIN);
     uart_init(921600);
     wait_ms(400);
 }
